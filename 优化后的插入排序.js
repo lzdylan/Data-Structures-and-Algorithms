@@ -10,13 +10,15 @@ function creatArrar(len,start,end) {
 function insertSort() {
     for(let i = 1; i<arr.length;i++){
         let j;
-        let temp = arr[i];
+        let e = arr[i];
         for(j = i;j > 0;j--){
-            if(temp<arr[j-1]){
+            if(e < arr[j-1]){
                 arr[j] = arr[j-1]
+            }else {
+                break;
             }
         }
-        arr[j] = temp
+        arr[j] = e
     }
     console.log("----------------------------------------------------------")
     console.log("我是插入排序"+arr)
