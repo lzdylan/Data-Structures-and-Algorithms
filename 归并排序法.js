@@ -14,7 +14,6 @@ function fntime(fn) {
     console.log("------------------------------------------")
     console.log(end - start+"毫秒！");
 }
-var arr = [];
 function guibing() {
     _gui(arr,0,arr.length-1);
     console.log("我是归并排序"+arr);
