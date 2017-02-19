@@ -12,8 +12,10 @@ function insertSort() {
         let j;
         let temp = arr[i];
         for(j = i;j > 0;j--){
-            if(temp<arr[j-1]){
-                arr[j] = arr[j-1]
+            if(temp<arr[j-1]) {
+                arr[j] = arr[j - 1]
+            }else {
+                break;
             }
         }
         arr[j] = temp
