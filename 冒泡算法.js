@@ -4,7 +4,7 @@
 var arr = [];
 function creatArray(len,start,end) {
     for(let i = 0;i < len; i++){
-        arr.push(Math.floor(Math.random()*(start+end)));
+        arr.push(Math.floor(Math.random()*(end-start))+start);
     }
 }
 function fntime(fn) {
