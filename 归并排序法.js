@@ -24,7 +24,7 @@ function _gui(arr,l,r) {
     }
     let mid = Math.floor((r+l)/2);
     _gui(arr,l,mid);
-    _gui(arr,mid+1,r);creatArrar
+    _gui(arr,mid+1,r);
     _merge(arr,l,mid,r);
 }
 function _merge (arr,l,mid,r) {
