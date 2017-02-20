@@ -1,5 +1,5 @@
 /**
- * Created by yinchi on 2017/2/19.
+ * Created by war3_2 on 2017/2/20.
  */
 var arr = []
 function creatArrar(len,start,end) {
@@ -14,18 +14,13 @@ function fntime(fn) {
     console.log("------------------------------------------")
     console.log(end - start+"毫秒！");
 }
-function guibing() {
-    _gui(arr,0,arr.length-1);
-    console.log("我是归并排序"+arr);
-}
-function _gui(arr,l,r) {
-    if(l >= r){
-        return;
+function mergeSortBU() {
+    for(let sz = 1; sz<arr.length;sz += sz){
+        for (let i = 0; i+sz<arr.length;i+=sz+sz){
+            _merge(arr,i,i+sz-1,Math.min(i+sz+sz-1,arr.length-1))
+        }
     }
-    let mid = Math.floor((r+l)/2);
-    _gui(arr,l,mid);
-    _gui(arr,mid+1,r);
-    _merge(arr,l,mid,r);
+    console.log("我是从底到顶归并排序"+arr);
 }
 function _merge (arr,l,mid,r) {
     let aux = [];
@@ -53,6 +48,6 @@ function _merge (arr,l,mid,r) {
 }
 function main() {
     creatArrar(10000,0,10000)
-    fntime(guibing)
+    fntime(mergeSortBU)
 }
 main()
