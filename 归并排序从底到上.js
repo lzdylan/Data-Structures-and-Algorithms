@@ -15,8 +15,8 @@ function fntime(fn) {
     console.log(end - start+"毫秒！");
 }
 function mergeSortBU() {
-    for(let sz = 1; sz<arr.length;sz += sz){
-        for (let i = 0; i+sz<arr.length;i+=sz+sz){
+    for(let sz = 1; sz<arr.length;sz += sz){//从底部归并，1，2，4，8，16元素个数归并
+        for (let i = 0; i+sz<arr.length;i+=sz+sz){//每一次递归的时候元素的起始位置，arr[i……i+sz-1],arr[i+sz……i+2*sz-1]
             _merge(arr,i,i+sz-1,Math.min(i+sz+sz-1,arr.length-1))
         }
     }
