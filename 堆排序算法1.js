@@ -1,5 +1,5 @@
 /**
- * Created by war3_2 on 2017/2/21.
+ * Created by war3_2 on 2017/2/23.
  */
 class MaxHeap {
     constructor(){
@@ -49,13 +49,26 @@ class MaxHeap {
         }
     }
 }
-function main() {
+function heapSort1(arr) {
     let maxheap = new MaxHeap();
-    for (let i = 0; i < 20;i++){
-        maxheap.insert(Math.floor(Math.random()*100));
+    console.log(arr)
+    for(let i = 0;i<arr.length;i++){
+        maxheap.insert(arr[i])
     }
-    console.log(maxheap);
-    maxheap.extractMax()
-    console.log(maxheap);
+    console.log(maxheap)
+    for (let i = arr.length-1;i>=0;i--){
+        arr[i] = maxheap.extractMax()
+    }
+    console.log(arr)
+}
+var arr = []
+function creatArrar(len,start,end) {
+    for(let i = 0;i<len;i++){
+        arr.push(Math.floor(Math.random()*(end-start))+start);
+    }
+}
+function main() {
+    creatArrar(20,0,100)
+    heapSort1(arr)
 }
 main()
